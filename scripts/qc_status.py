@@ -7,7 +7,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
 
 raw_dir = os.path.join(PROJECT_ROOT, "data", "raw")
-labels_dir = os.path.join(PROJECT_ROOT, "data", "labels")
+metrics_dir = os.path.join(PROJECT_ROOT, "data", "metrics")
 
 subfolders = [
     f for f in os.listdir(raw_dir)
@@ -16,7 +16,7 @@ subfolders = [
 print(subfolders)
 
 # Creating the directory path specified labels_dir
-os.makedirs(labels_dir, exist_ok=True)
+os.makedirs(metrics_dir, exist_ok=True)
 
 # Stating the thresholds
 # All thresholds computed from distribution of each metric
@@ -124,5 +124,5 @@ for folder_id in subfolders:
         })
 
 qc = pd.DataFrame(rows)
-qc.to_csv("data/labels/qc_metrics.csv", index=False)
+qc.to_csv("data/metrics/qc_metrics.csv", index=False)
 print(qc["qc_status"].value_counts())
