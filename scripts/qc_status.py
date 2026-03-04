@@ -114,6 +114,7 @@ for folder_id in subfolders:
 
         rows.append({
             "image_id": filename,
+            "student_id": folder_id,
             "qc_status": qc_status,
             "blue_score": blue_excess,
             "exposure_score": exposure_score,
