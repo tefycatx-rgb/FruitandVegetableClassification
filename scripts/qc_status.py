@@ -116,7 +116,7 @@ for folder_id in subfolders:
         qc_status = "pass" if not reasons else "flagged"
 
         rows.append({
-            "image_id": filename,
+            "image_id": filename[:-4],
             "student_id": str(folder_id),
             "qc_status": qc_status,
             "blue_score": blue_excess,
