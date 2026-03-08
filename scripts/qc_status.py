@@ -34,7 +34,7 @@ for folder_id in subfolders:
     folder_path = os.path.join(raw_dir, folder_id)
 
     for filename in os.listdir(folder_path):
-        if not filename.lower().endswith((".jpg", ".jpeg", ".png", ".HEIC")):
+        if not filename.lower().endswith((".jpg", ".jpeg", ".png", ".heic")):
             continue
 
         img_path = os.path.join(folder_path, filename)
@@ -44,7 +44,7 @@ for folder_id in subfolders:
         if img is None:
             print(f"{filename} Failed, corrupt image detected")
             continue
-
+        image_id = os.path.splitext(filename)[0]
         # Resizing to 90x90
         # Normalizing the image pixel data to be 0-1
         img_resized = cv2.resize(img, (90, 90), interpolation=cv2.INTER_AREA)
