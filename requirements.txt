@@ -1,1 +1,9 @@
 numpy
+opencv-python
+scikit-image
+ipykernel
+pyefd
+mahotas
+matplotlib
+pandas
+os
