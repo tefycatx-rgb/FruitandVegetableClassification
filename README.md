@@ -16,6 +16,7 @@ https://iowa-my.sharepoint.com/personal/washor_uiowa_edu/_layouts/15/onedrive.as
 
 For Testing
 1. complete steps 1-6 above
-2. upload images into data/testing
-3. run submissions 
+2. upload images into data/testing/subfolder
+3. run python scripts/qc_status.py --raw_dir data/testing
+4. run submissions 
 
