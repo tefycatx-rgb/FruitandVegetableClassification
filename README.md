@@ -16,7 +16,7 @@ https://iowa-my.sharepoint.com/personal/washor_uiowa_edu/_layouts/15/onedrive.as
 
 For Testing
 1. complete steps 1-6 above
-2. upload images into data/testing/subfolder
-3. run python scripts/qc_status.py --raw_dir data/testing
-4. run submissions 
+2. run python scripts/qc_status.py --raw_dir path/to/raw/images (see scripts/README.md for more detail)
+4. copy code snippets into submission.py
+5. run python scripts/submission.py --raw_dir path/to/raw/images --output_dir path/to/output/predictions 
 
