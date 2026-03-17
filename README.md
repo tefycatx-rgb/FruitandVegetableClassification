@@ -79,7 +79,7 @@ Copy code snippet from homework into submission.py
 ```
 python scripts/submission.py \
     --raw_dir <path_to_images> \
-    --output_csv <path_to_output_csv>
+    [--output_csv <path_to_output_csv>]
 ```
 ## Input Directory Requirements
 The --raw_dir must contain images of the following format (images inside subfolder)
@@ -102,7 +102,7 @@ Where:
 ```
 python scripts/submission.py \
     --raw_dir data/testing \
-    --output_csv data/processed/test_predictions.csv
+    --output_csv results/test_predictions.csv
 ```
 Example output:
 ```
