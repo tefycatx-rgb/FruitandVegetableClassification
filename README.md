@@ -14,6 +14,6 @@ https://iowa-my.sharepoint.com/personal/washor_uiowa_edu/_layouts/15/onedrive.as
 6. Run pip install -r requirements.txt
 7. Use notebooks/preprocess.ipynb to preprocess each photo in each foler, and save the output in data/preprocess.
      * hit run all
-     * use the full pipeline in the last cell of the notebook and loop through each folder, and each photo. 
+     * use the full pipeline in the last cell of the notebook and loop through each folder, and each photo, and get the 380 feature vectors. Note the pipeline failed on 12 images, so the final training set will have 368 items. 
 8. Use the preprocessed data, and fruit_labels_metadata for binary and multiclass labels, for your classification.
 
