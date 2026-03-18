@@ -73,7 +73,8 @@ labels/fruit_labels_metadata.csv
 
 ## Running Predictions (Instructor Use) 
 Complete steps 1-4 above
-Copy code snippet from homework into submission.py
+Download submission file into scripts
+Run the submission file
 
 ### Command
 ```
