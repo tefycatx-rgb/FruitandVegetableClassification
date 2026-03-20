@@ -7,7 +7,7 @@ import joblib
 def run_inference(folder_path, output_csv="predictions.csv"):
 
     rows = []
-
+    # Go through the folder
     for file in os.listdir(folder_path):
         if not file.lower().endswith((".jpg", ".jpeg", ".png")):
             continue
@@ -21,7 +21,7 @@ def run_inference(folder_path, output_csv="predictions.csv"):
             print(f"Skipping {file} due to error: {e}")
             continue
 
-        # Convert features
+        # Convert features to columns
         if isinstance(feature_vector, dict):
             feat_dict = feature_vector
         else:
@@ -30,7 +30,7 @@ def run_inference(folder_path, output_csv="predictions.csv"):
         row = {"image_id": image_id}
         row.update(feat_dict)
 
-        # Include params if needed
+        # Deal with best_params
         if isinstance(best_params, dict):
             row.update(best_params)
 
@@ -38,6 +38,7 @@ def run_inference(folder_path, output_csv="predictions.csv"):
 
     # Create DataFrame
     features = pd.DataFrame(rows)
+    # Handle missing data
     features = features.fillna(features.median(numeric_only=True))
 
     predictors_selected = [
@@ -49,7 +50,7 @@ def run_inference(folder_path, output_csv="predictions.csv"):
         "feat_40","feat_25","feat_31","feat_32","feat_21"
     ]
 
-    # Handle missing columns safely
+    # Handle missing columns (just in case)
     for col in predictors_selected:
         if col not in features:
             features[col] = 0
@@ -73,6 +74,7 @@ def run_inference(folder_path, output_csv="predictions.csv"):
     pd.DataFrame(results).to_csv(output_csv, index=False)
     print(f"Saved predictions to {output_csv}")
 
+# Tests to see if the runnable code works:
 # run_inference("C:/Users/tefyc/Downloads/live_project_images/01460705")
 # python scripts/runnable_code.py "C:/Users/tefyc/Downloads/live_project_images/01460705"
 
