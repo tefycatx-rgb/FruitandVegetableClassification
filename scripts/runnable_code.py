@@ -56,7 +56,9 @@ def run_inference(folder_path, output_csv="predictions.csv"):
 
     X_feat = features[predictors_selected]
 
-    # LOAD TRAINED MODEL
+    # Loading training model
+    # Remember to also have the "trained_model.pkl" in the directory
+    
     clf = joblib.load("trained_model.pkl")
 
     preds = clf.predict(X_feat)
